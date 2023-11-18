@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WW2 Locations</title>
+
+    <link rel="stylesheet" href="https://nadir-software.github.io/nadircss/nadir.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <style>
+        .card, .card-subtle {
+            cursor: url("https://nadir-software.github.io/nadircss/Cursors/link-select.cur"), auto;
+
+            text-align: center;
+
+            width: 50vw;
+        }
+
+        .interactive:hover {
+            background-color: rgba(0, 89, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar-column">
+        <div class="navbar">
+            <h1>Filters</h1>
+        </div>
+
+        <div class="row">
+            <button onclick="location.href = 'index.html'">
+                <span class="material-symbols-rounded">arrow_back</span>
+                Back
+            </button>
+
+            <button id="enable-all" onclick="enableAll()">
+                <span class="material-symbols-rounded">done_all</span>
+                Enable all
+            </button>
+        </div>
+    </div>
+
+    <div class="column">
+        <div onclick="setFilter('ad', 'off')" class="card interactive" id="ad">
+            <h1>Air Defences</h1>
+        </div>
+
+        <div onclick="setFilter('raf', 'off')" class="card interactive" id="raf">
+            <h1>Airfields</h1>
+        </div>
+        
+        <div onclick="setFilter('ar', 'off')" class="card interactive" id="ar">
+            <h1>Air Raids</h1>
+        </div>
+
+        <div onclick="setFilter('arp', 'off')" class="card interactive" id="arp">
+            <h1>Air Raid Precautions</h1>
+        </div>
+
+        <div onclick="setFilter('usa', 'off')" class="card interactive" id="usa">
+            <h1>Americans</h1>
+        </div>
+
+        <div onclick="setFilter('a&s', 'off')" class="card interactive" id="a&s">
+            <h1>Ammunition & Supply</h1>
+        </div>
+
+        <div onclick="setFilter('aux', 'off')" class="card interactive" id="aux">
+            <h1>Auxiliary Units</h1>
+        </div>
+
+        <div onclick="setFilter('arm', 'off')" class="card interactive" id="arm">
+            <h1>Army Barracks / Location</h1>
+        </div>
+
+        <div onclick="setFilter('cd', 'off')" class="card interactive" id="cd">
+            <h1>Civil Defence</h1>
+        </div>
+
+        <div onclick="setFilter('civ', 'off')" class="card interactive" id="civ">
+            <h1>Civilian</h1>
+        </div>
+
+        <div onclick="setFilter('df', 'off')" class="card interactive" id="df">
+            <h1>Defence Fortifications</h1>
+        </div>
+
+        <div onclick="setFilter('dl', 'off')" class="card interactive" id="dl">
+            <h1>Defence Locations</h1>
+        </div>
+
+        <div onclick="setFilter('evac', 'off')" class="card interactive" id="evac">
+            <h1>Evacuees</h1>
+        </div>
+
+        <div onclick="setFilter('hq', 'off')" class="card interactive" id="hq">
+            <h1>Headquarters</h1>
+        </div>
+
+        <div onclick="setFilter('hg', 'off')" class="card interactive" id="hg">
+            <h1>Home Guard</h1>
+        </div>
+
+        <div onclick="setFilter('hos', 'off')" class="card interactive" id="hos">
+            <h1>Hospital / First Aid Post</h1>
+        </div>
+
+        <div onclick="setFilter('pill', 'off')" class="card interactive" id="pill">
+            <h1>Pillbox</h1>
+        </div>
+
+        <div onclick="setFilter('rdf', 'off')" class="card interactive" id="rdf">
+            <h1>Radar</h1>
+        </div>
+
+        <div onclick="setFilter('rn', 'off')" class="card interactive" id="rn">
+            <h1>Royal Navy</h1>
+        </div>
+
+        <div onclick="setFilter('sec', 'off')" class="card interactive" id="sec">
+            <h1>Secret Intelligence Services/ SOE</h1>
+        </div>
+
+        <div onclick="setFilter('wg', 'off')" class="card interactive" id="wg">
+            <h1>War Grave</h1>
+        </div>
+
+        <div onclick="setFilter('oth', 'off')" class="card interactive" id="oth">
+            <h1>Other</h1>
+        </div>
+    </div>
+
+    <script src="filters.js"></script>
+</body>
+</html>
