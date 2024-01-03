@@ -9,7 +9,9 @@ function setFilter(filter, value) {
     document.getElementById(filter).classList.add("card");
     document.getElementById(filter).classList.add("interactive");
     document.getElementById(filter).classList.remove("card-subtle");
-  } else {
+  }
+  
+  else {
     document.getElementById(filter).onclick = () => {
       setFilter(filter, "on");
     };
@@ -54,7 +56,9 @@ function fetchSettings() {
           document.getElementById(item).classList.remove("card");
           document.getElementById(item).classList.remove("interactive");
           document.getElementById(item).classList.add("card-subtle");
-        } else {
+        }
+        
+        else {
           on++;
         }
       });
@@ -65,7 +69,9 @@ function fetchSettings() {
       if (off == 0) {
         document.getElementById("enable-all").inert = true;
         document.getElementById("enable-all").className = "button-subtle";
-      } else {
+      }
+      
+      else {
         document.getElementById("enable-all").inert = false;
         document.getElementById("enable-all").className = "";
       }
