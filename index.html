@@ -13,6 +13,8 @@
   <style>
     #map * {
       border-radius: 0;
+
+      transition: none;
     }
 
     #map a {
@@ -56,11 +58,41 @@
     <div style="border-radius: 24px; width: 50%; height: 60vh" id="map"></div>
 
     <script>
-      var map = L.map("map").setView([50.5, -5], 8);
+      var map = L.map("map").setView([50.5, -5], 9);
 
       L.tileLayer("http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png", {
         maxZoom: 17,
       }).addTo(map);
+
+      let xhrPoints = new XMLHttpRequest();
+      xhrPoints.open('GET', 'points.geojson');
+      xhrPoints.setRequestHeader('Content-Type', 'application/json');
+      xhrPoints.responseType = 'json';
+      xhrPoints.onload = function() {
+          if (xhrPoints.status !== 200) return
+          L.geoJSON(xhrPoints.response).addTo(map);
+      };
+      xhrPoints.send();
+
+      let xhrLines = new XMLHttpRequest();
+      xhrLines.open('GET', 'lines.geojson');
+      xhrLines.setRequestHeader('Content-Type', 'application/json');
+      xhrLines.responseType = 'json';
+      xhrLines.onload = function() {
+          if (xhrLines.status !== 200) return
+          L.geoJSON(xhrLines.response).addTo(map);
+      };
+      xhrLines.send();
+
+      let xhrAreas = new XMLHttpRequest();
+      xhrAreas.open('GET', 'areas.geojson');
+      xhrAreas.setRequestHeader('Content-Type', 'application/json');
+      xhrAreas.responseType = 'json';
+      xhrAreas.onload = function() {
+          if (xhrAreas.status !== 200) return
+          L.geoJSON(xhrAreas.response).addTo(map);
+      };
+      xhrAreas.send();
     </script>
   </div>
 </body>
